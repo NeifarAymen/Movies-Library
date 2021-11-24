@@ -1,0 +1,58 @@
+<div class="container card border-dark active" style="margin-top: 2%" >
+    <div class="card-title  ">
+        <h5 style="color: black; font-weight: bold;font-family: Arial, Helvetica, sans-serif;margin-top: 1%;" class="mr-2">
+          <span>Liste des Films</span></h5>
+        <div class="e-table" style="margin-top: 2%" >
+          
+            <div class="row" style="margin:auto">
+              <table border="1" class="table table-striped" style="border:2px solid;">
+                <thead class="thead-light">
+                  <th  >
+                    <div >
+                        <input class="form-control mr-sm-3" type="search" placeholder="Search" aria-label="Search" #query (keyup)="search(query.value)"  name=""
+                        placeholder="Search...">
+                      <span class="search_icon"></span>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="text-center px-xl-3">
+                      <button class="btn btn-primary active " style="height: 40px;width:150px;margin-left: 60%;" type="button" (click)="create()"
+                        data-toggle="modal" data-target="#user-form-modal" > Ajouter un Film </button>
+                    </div>
+                  </th>
+
+
+                </thead>
+              </table>
+      
+          </div>
+        </div>
+      </div>
+
+    <table class="table table-stripe">
+        <thead>
+            <th style="border:2px solid  ;text-align: center;">Code</th>
+            <th style="border:2px solid   ;text-align: center;">Titre</th>
+            <th style="border:2px solid   ;text-align: center;">Realisateur</th>
+            <th style="border:2px solid   ;text-align: center;">Date Sortie</th>
+            <th style="border:2px solid   ;text-align: center;">type</th>
+            <th style="border:2px solid  ;text-align: center;">Actions</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let film of searchFilms">
+                <td style="border:2px solid  ;text-align: center;">{{film.id}}</td>
+                <td style="border:2px solid ;text-align: center;">{{film.title}}</td>
+                <td style="border:2px solid ;text-align: center;">{{film.director}}</td>
+                <td style="border:2px solid  ;text-align: center;">{{film.releaseDate}}</td>
+                <td style="border:2px solid  ;text-align: center;">{{film.type}}</td>
+                    <td style="border:2px solid " width=125>
+                        <div class="pl">
+                          <button  class="btn btn-sm btn-outline-success" type ="button" (click)="update(this.film)">Edit</button>
+                          <button  class="btn btn-sm btn-outline-danger" type="button" (click)="deleteFilm(this.film)">Delete</button>
+                        </div>
+                      </td>
+            </tr>
+        </tbody>
+    </table>
+    
+</div>

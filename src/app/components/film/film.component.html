@@ -1,0 +1,58 @@
+
+<div class="container">
+<div class="row" style="margin:auto">
+<div>
+<div class="e-panel " >
+
+<div  style="border:2px solid;max-width: 60rem;margin:auto ;margin-top: 1%;">
+    <div class="card-header " >
+    
+  Films
+</div>
+<div class="card-body " >
+    <form [formGroup]="filmForm" (ngSubmit)="onSubmit()" class="form">
+        <div class="mb-2"  >
+            <div class="modal-header" >
+                <h5 class="modal-title">Ajouter Un Film</h5>
+            </div>
+        </div>
+        <div class="row" >
+        <div  class="input-group col-md-6" style="margin-top: 2%;">
+            <span class="input-group-addon"></span>
+            <input class="form-control" type="text" name="titre" formControlName="title"
+                [(ngModel)]="film.title" placeholder="titre">
+        </div>
+        <div  class="input-group col-md-6" style="margin-top: 2%;">
+            <span class="input-group-addon"></span>
+            <input class="form-control" type="text" name="director" formControlName="director"
+            [(ngModel)]="film.director" placeholder="realisateur">
+        </div>
+    </div>
+
+    <div class="row">
+        <div  class="input-group col-md-6" style="margin-top: 2%;">
+            <span class="input-group-addon"></span>
+        <input class="form-control" type="date" name="releaseDate" formControlName="releaseDate" [(ngModel)]="film.releaseDate"
+            placeholder="releaseDate">
+        </div>
+        <div  class="input-group col-md-6" style="margin-top: 2%;">
+            <span class="input-group-addon"></span>
+            <select   class="form-control" type="text" name="type" formControlName="type" [(ngModel)]="film.type"
+                placeholder="type ">
+                <option > -- Please select an option --</option>
+                <option>sc-fi</option>
+                <option>action</option>
+                <option>doc </option>
+                </select>
+        </div>
+    </div>
+        <div class="row" style="margin-top: 3%;">
+        <button type="reset" class="btn btn-danger"  style="height: 40px;width:150px;margin-left: 28%;" >Reset</button>
+        <button type="submit" class="btn btn-success"  style="height: 40px;width:150px;margin-left: 12%;" [disabled]="!filmForm.valid" >Enregistrer</button>
+        </div>
+    </form>
+</div>
+</div>
+
+</div>
+</div>
