@@ -15,14 +15,13 @@ json structrues
 @ControllerAdvice
 public class ExecptionTranslator {
 
-	
 	@ExceptionHandler(MyResourceNotFoundException.class)
 	@ResponseBody
 	@ResponseStatus(HttpStatus.NOT_FOUND)
-	public ResponseEntity<ErrorVM> processRessourceNotFound(MyResourceNotFoundException exception){
+	public ResponseEntity<ErrorVM> processRessourceNotFound(MyResourceNotFoundException exception) {
 		BodyBuilder builder;
-		builder=ResponseEntity.status(HttpStatus.NOT_FOUND);
-		return builder.body(new ErrorVM("NOT FOUND",exception.getMessage()));
+		builder = ResponseEntity.status(HttpStatus.NOT_FOUND);
+		return builder.body(new ErrorVM("NOT FOUND", exception.getMessage()));
 	}
-	
+
 }

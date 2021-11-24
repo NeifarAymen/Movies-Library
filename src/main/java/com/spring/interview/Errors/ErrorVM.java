@@ -2,20 +2,19 @@ package com.spring.interview.Errors;
 
 import java.io.Serializable;
 
-public class ErrorVM implements Serializable{
+public class ErrorVM implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -3207033280287462565L;
 
-	
 	private final String message;
-	
+
 	private final String description;
 
 	public ErrorVM(String message) {
-		this(message,null);
+		this(message, null);
 	}
 
 	public ErrorVM(String message, String description) {
@@ -30,7 +29,5 @@ public class ErrorVM implements Serializable{
 	public String getDescription() {
 		return description;
 	}
-	
-	
-	
+
 }
